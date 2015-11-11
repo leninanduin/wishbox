@@ -1,0 +1,39 @@
+{
+    "description": "Universal wishlist app.",
+    "manifest_version": 2,
+    "name": "Wishbox",
+    "version": "0.1",
+
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["jquery-1.11.1.min.js"],
+            "css": ["wishbox.css"]
+        }
+    ],
+
+    "web_accessible_resources": [
+        "wishbox.css"
+    ],
+
+    "permissions": [
+        "activeTab"
+    ],
+
+    "background": {
+        "scripts": ["jquery-1.11.1.min.js","background.js"],
+        "persistent": true
+    },
+
+    "icons": {
+        "36": "icon-32.png",
+        "48": "icon-48.png"
+    },
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_title": "Add to your Wishbox wishlist"
+    },
+
+    "options_page": "options.html"
+}
